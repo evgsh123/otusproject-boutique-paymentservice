@@ -10,6 +10,7 @@ on:
 jobs:
   run:
     uses: "evgsh123/otusproject-apps-cd/.github/workflows/workflow.yaml@main"
+    if: github.event.pull_request.merged == true
     with:
       name: "paymentService"
       JOBID: "${{ github.run_number }}"
